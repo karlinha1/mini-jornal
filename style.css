@@ -1,0 +1,129 @@
+body,
+ul,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Helvetica;
+    text-align: center;
+
+}
+
+body{
+    margin-bottom: 100px;
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.a{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+    background-color: #1d1e20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    margin-left: 20px;
+
+}
+
+.menu li a{
+    display: block;
+    padding: 10px;
+}
+
+
+
+/*CSS FlexBox 1*/
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex > div {
+    flex: 1 1 200px;
+    margin: 0 14px;
+
+}
+
+
+/*GRID1*/
+
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1040px;
+    padding: 10px;
+    margin: 0 auto; 
+}
+
+
+
+
+
+
+.grid1 > div:nth-child(n + 4) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.grid1 > div:nth-child(n + 4):hover{
+    -webkit-transform: scale(0.90);
+    transform: scale(0.90);
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    }
+
+.grid1 > div.anuncio {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    border-top: 10px solid rgb(71, 209, 255);
+    display: block;
+}
+
+@media(max-width: 600px) {
+    .grid1{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .grid1 > div:nth-child(n + 4) {
+        display: block;
+    }
+
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
+
